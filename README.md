@@ -4,7 +4,7 @@ Created a server which returns red, green, and blue channels of an image separat
 
 # Run on your machine
 ```
-# git clone https://github.com/chinmay81098
+# git clone https://github.com/chinmay81098/caMicroscope
 ```
 ```
 cd caMicroscope
