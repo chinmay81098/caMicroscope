@@ -12,7 +12,7 @@ cd caMicroscope
 # Start Flask Server
 
 ```
-cd caMircoscope/server
+cd caMicroscope/server
 ```
 ```
 python script.py
