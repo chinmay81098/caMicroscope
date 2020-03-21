@@ -1,14 +1,21 @@
 <template>
   <div>
-  <div v-if="!selectedFile">
-    <h2>Select an Image</h2>
-    <input type="file" accept="image/jpeg" name="image" @change="uploadImage">
+  <div v-if="!received">
+      <div v-if="!selectedFile">
+        <h2>Select an Image</h2>
+        <input type="file" accept="image/jpeg" name="image" @change="uploadImage">
+      </div>
+      <div v-else>
+        <img :src="selectedFile">
+        <button @click="removeImage">Remove</button>
+      </div>
+      <button @click="onSubmit">Send</button>
   </div>
   <div v-else>
-    <img :src="selectedFile">
-    <button @click="removeImage">Remove</button>
-  </div>
-  <button @click="onSubmit">Send</button>
+    <img :src="arrImage[0]">
+    <img :src="arrImage[1]">
+    <img :src="arrImage[2]">
+    </div>
   </div>
 </template>
 <script>
@@ -21,14 +28,24 @@ export default {
       msg : '',
       selectedFile: false,
       image:null,
+      received: false,
+      arrImage:[]
     };
   },
   methods: {
+    updateSrc(arr) {
+      for(var i =0;i<arr.length;i++){
+        var img = arr[i].split('\'')[1]
+        this.arrImage[i]= 'data:image/jpeg;base64,'+ img ;
+      }
+    },
     getResponse() {
       const path = 'http://127.0.0.1:5000/response';
       axios.get(path)
         .then((res)=>{
-          this.msg = res.data;
+          this.received=true;
+          this.msg = res.data['status'];
+          this.updateSrc(this.msg);
         })
         .catch((error)=>{
           console.log(error);

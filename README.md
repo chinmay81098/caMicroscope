@@ -36,6 +36,8 @@ create a virtual enivronment and install
 Flask
 Flask-CORS
 opencv
+PIL
+
 
 ```
 ## Vue
