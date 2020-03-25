@@ -1,4 +1,4 @@
-# caMicroscope
+# caMicroscopeGSoCTask
 Created a server which returns red, green, and blue channels of an image separately, and a client which recombines them into the original image.
 
 
