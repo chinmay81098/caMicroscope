@@ -32,13 +32,17 @@ npm run serve
 ## flask server
 
 ```
+cd caMicroscope/server
+```
+
+```
 create a virtual enivronment and install
 Flask
 Flask-CORS
 opencv
 PIL
 
-
+pip install -r requirements.txt 
 ```
 ## Vue
 
