@@ -10,7 +10,7 @@ export default new Router ({
     base : 'http://localhost:8080',
     routes: [
         {
-            path: '/ping',
+            path: '/',
             name: 'HelloWorld',
             component: HelloWorld,
         }
